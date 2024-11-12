@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
   <base href="/">
 
   <meta charset="UTF-8">
@@ -11,44 +24,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="food_menu">
-  <link id="app-icon" rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link id="favicon" rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title id="page-title">your menu</title>
+  <title>food_menu</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <script>
-    // Get the subdomain from the URL
-    const subdomain = window.location.hostname.split('.')[0];
-
-    // Define icons and titles for different subdomains
-    const config = {
-      "italian-restauran": {
-        icon: "assets/assets/icons/instagram.png",
-        title: subdomain
-      },
-      "asian-fusion": {
-        icon: "assets/assets/icons/whatsapp.png",
-        title: subdomain
-      },
-      // Add more subdomains and their corresponding configurations here
-    };
-
-    // Check if there's a configuration for the current subdomain
-    if (config[subdomain]) {
-      // Update the icon
-      document.getElementById("app-icon").href = config[subdomain].icon;
-      document.getElementById("favicon").href = config[subdomain].icon;
-
-      // Update the page title
-      document.title = config[subdomain].title;
-    }
-  </script>
-  
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
-
