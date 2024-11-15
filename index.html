@@ -31,8 +31,146 @@
 
   <title>food_menu2</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    /* استایل بدنه */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+  
+    /* کانتینر اصلی */
+    .loading-container {
+      text-align: center;
+    }
+  
+    /* متن بارگذاری */
+    .loading-text {
+      font-size: 1.5em;
+      color: #8a4b08;
+      margin-bottom: 20px;
+    }
+  
+    /* کانتینر همبرگر */
+    .burger {
+      position: relative;
+      width: 100px;
+      height: 120px;
+      animation: bounce 1.5s infinite ease-in-out;
+    }
+  
+    /* نان بالا */
+    .bun-top {
+      width: 100px;
+      height: 40px;
+      background-color: #f5a623;
+      border-radius: 50% 50% 0 0;
+      position: absolute;
+      top: 0;
+      z-index: 5;
+      animation: floatUpDown 2s infinite ease-in-out;
+    }
+  
+    /* دانه‌های کنجد */
+    .sesame {
+      width: 5px;
+      height: 5px;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      animation: float 1.5s infinite ease-in-out;
+    }
+    .sesame:nth-child(1) { top: 10px; left: 20px; animation-delay: 0.2s; }
+    .sesame:nth-child(2) { top: 15px; left: 50px; animation-delay: 0.4s; }
+    .sesame:nth-child(3) { top: 5px; left: 70px; animation-delay: 0.6s; }
+  
+    /* کاهو */
+    .lettuce {
+      width: 90px;
+      height: 10px;
+      background-color: #4caf50;
+      position: absolute;
+      top: 50px;
+      z-index: 4;
+      border-radius: 5px;
+      animation: floatUpDown 2s infinite ease-in-out 0.1s;
+    }
+  
+    /* گوشت */
+    .patty {
+      width: 80px;
+      height: 15px;
+      background-color: #8b4513;
+      position: absolute;
+      top: 70px;
+      z-index: 3;
+      border-radius: 5px;
+      animation: floatUpDown 2s infinite ease-in-out 0.2s;
+    }
+  
+    /* پنیر */
+    .cheese {
+      width: 85px;
+      height: 10px;
+      background-color: #ffd700;
+      position: absolute;
+      top: 90px;
+      z-index: 2;
+      border-radius: 5px;
+      animation: floatUpDown 2s infinite ease-in-out 0.3s;
+    }
+  
+    /* نان پایین */
+    .bun-bottom {
+      width: 100px;
+      height: 20px;
+      background-color: #f5a623;
+      border-radius: 0 0 50% 50%;
+      position: absolute;
+      top: 110px;
+      z-index: 1;
+      animation: floatUpDown 2s infinite ease-in-out 0.4s;
+    }
+  
+    /* انیمیشن شناور */
+    @keyframes float {
+      0%, 100% { transform: translateY(-2px); }
+      50% { transform: translateY(2px); }
+    }
+  
+    /* انیمیشن جدا شدن و دوباره جمع شدن */
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0); }
+      25% { transform: translateY(-5px); }
+      75% { transform: translateY(5px); }
+    }
+  
+    /* انیمیشن حرکت همبرگر */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
 </head>
 <body>
+  <div class="loading-container"></div>
+  
+    <div class="burger">
+      <div class="bun-top">
+        <div class="sesame"></div>
+        <div class="sesame"></div>
+        <div class="sesame"></div>
+      </div>
+      <div class="lettuce"></div>
+      <div class="patty"></div>
+      <div class="cheese"></div>
+      <div class="bun-bottom"></div>
+    </div>
+  </div>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
